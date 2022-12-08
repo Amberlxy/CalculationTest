@@ -11,7 +11,7 @@ import requests
 from config import *
 
 
-def test_calculation(data):
+def calculation(data):
 
     url_trigger = "/olap/api/event/trigger"
     headers = {"access-token": access_token}

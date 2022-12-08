@@ -5,7 +5,7 @@ LastEditors: Amberlxy
 LastEditTime: 2022-12-03 15:00:53
 FilePath: /CalculationTest/testcase/case/test_event_totaltimes.py
 '''
-import self as self
+import data as data
 
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
@@ -15,45 +15,45 @@ import self as self
 from testcase.module.calculate import *
 
 
-class Test_case():
-
-    def test_01(self, data):
-        data = {
-            "productId": "1480807164923912194",
-            "packageId": "",
-            "dataSource": "ta",
-            "events": [
-                {
-                    "analysis": "TOTAL_TIMES",
-                    "eventName": "task_store_content__subscribe",
-                    "eventCode": "bwl4loevrshs",
-                    "eventType": "common",
-                    "eventNameDisplay": "订阅的总次数",
-                    "quota": "",
-                    "relation": "and",
-                    "initData": "[]",
-                    "type": "normal",
-                    "filts": [],
-                    "eventSplitIndexes": [],
-                    "fieldType": "",
-                    "attributeList": []
-                }
-            ],
-            "eventView": {
-                "startTime": "2022-11-25",
-                "endTime": "2022-12-01",
-                "timeParticleSize": "day",
-                "firstDayOfWeek": 1,
+def test_01(data):
+    data = {
+        "productId": "1480807164923912194",
+        "packageId": "",
+        "dataSource": "ta",
+        "events": [
+            {
+                "analysis": "TOTAL_TIMES",
+                "eventName": "task_store_content__subscribe",
+                "eventCode": "bwl4loevrshs",
+                "eventType": "common",
+                "eventNameDisplay": "订阅的总次数",
+                "quota": "",
                 "relation": "and",
+                "initData": "[]",
+                "type": "normal",
                 "filts": [],
-                "groupBy": [],
-                "eventSplit": {},
-                "initData": {
-                    "relationship": "and",
-                    "dataForm": []
-                }
-            },
-            "statType": "event",
-            "id": "f8df0158-5b1a-4b21-a548-3ae372e2a9b3"
-        }
-        test_calculation(data)
+                "eventSplitIndexes": [],
+                "fieldType": "",
+                "attributeList": []
+            }
+        ],
+        "eventView": {
+            "startTime": "2022-11-25",
+            "endTime": "2022-12-01",
+            "timeParticleSize": "day",
+            "firstDayOfWeek": 1,
+            "relation": "and",
+            "filts": [],
+            "groupBy": [],
+            "eventSplit": {},
+            "initData": {
+                "relationship": "and",
+                "dataForm": []
+            }
+        },
+        "statType": "event",
+        "id": "f8df0158-5b1a-4b21-a548-3ae372e2a9b3"
+    }
+
+
+calculation(data)

@@ -13,3 +13,5 @@ import config
 import requests
 
 
+if __name__ == '__main__':
+    pytest.main(['-s', '-v', './testcase/case/'])
