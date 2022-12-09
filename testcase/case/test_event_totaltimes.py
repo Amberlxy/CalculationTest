@@ -5,8 +5,6 @@ LastEditors: Amberlxy
 LastEditTime: 2022-12-03 15:00:53
 FilePath: /CalculationTest/testcase/case/test_event_totaltimes.py
 '''
-import data as data
-
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -15,7 +13,7 @@ import data as data
 from testcase.module.calculate import *
 
 
-def test_01(data):
+def test_01():
     data = {
         "productId": "1480807164923912194",
         "packageId": "",
@@ -55,5 +53,4 @@ def test_01(data):
         "id": "f8df0158-5b1a-4b21-a548-3ae372e2a9b3"
     }
 
-
-calculation(data)
+    calculation(data)

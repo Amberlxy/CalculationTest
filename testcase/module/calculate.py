@@ -11,12 +11,11 @@ import requests
 from config import *
 
 
-def calculation(data):
-
+def calculation(data, access_token):
     url_trigger = "/olap/api/event/trigger"
     headers = {"access-token": access_token}
     r = requests.post(url=url_domain + url_trigger, json=data, headers=headers)
-    # print(r.json()['code'])
-    assert r.json()['code'] == '6000'
-    print(r.status_code)
+    print(r.json())
+    assert r.json()['code'] == 6000
+    # print(r.status_code)
 
