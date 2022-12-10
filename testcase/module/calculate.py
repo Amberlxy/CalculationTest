@@ -11,7 +11,7 @@ import requests
 from config import *
 
 
-def calculation(data, access_token):
+def calculation(data, access_token):               # 将data传入「计算」接口，校验返回值code是否为6000
     url_trigger = "/olap/api/event/trigger"
     headers = {"access-token": access_token}
     r = requests.post(url=url_domain + url_trigger, json=data, headers=headers)

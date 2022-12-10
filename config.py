@@ -21,7 +21,6 @@ url_login = "/uc/user/login"  # 登录
 productId = "1480807263997566978"
 packageId = "1480808811246952449"
 eventCode = "bwl4loevrshs"
-# access_token =
 
 # URL
 url_domain = "http://holo-sh.tapque.com"  # 预发布

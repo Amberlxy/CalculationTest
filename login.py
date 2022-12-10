@@ -13,7 +13,7 @@ from config import *
 import os
 
 
-def get_access_token():
+def get_access_token():           # 通过验证码获取新token
     data1 = dict(username=username)
     r = requests.get(url=url_domain + url_code, params=data1)
     verification_code = input("请输入验证码：")
@@ -23,17 +23,16 @@ def get_access_token():
         'captchaCode': verification_code}
     s = requests.post(url=url_domain + url_login, data=data2)
     access_token2 = s.json()['records']
-    # print(access_token2)
     return access_token2
 
 
 filename = 'token.txt'
-if os.path.exists(filename) is False:
+if os.path.exists(filename) is False:               # 判断文件是否存在：若不存在，则获取token并存入文件；
     with open(filename, 'w+') as f:
         access_token = get_access_token()
         f.write(access_token)
 else:
-    with open(filename, 'r+') as f:
+    with open(filename, 'r+') as f:                 # 若存在，直接读取token，然后判断token是否有效，无效则重新获取token
         access_token_exit = f.read()
         headers = {"access-token": access_token_exit}
         print(access_token_exit)
