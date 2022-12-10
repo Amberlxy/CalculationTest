@@ -45,11 +45,14 @@ else:
         else:
             access_token = get_access_token()
             f.write(access_token)
-            print(access_token)
-            print(f.read())
-            if f.read() == access_token:
-                print("相同")
-            else:
-                print('不同')
+# print(access_token)
+# print(type(access_token))
+# with open(filename, 'r') as file:
+#     print(file.read())
+#     print(type(file.read()))
+#     if file.read() == access_token:
+#         print("相同")
+#     else:
+#         print('不同')
 
 
