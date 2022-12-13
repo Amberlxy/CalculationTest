@@ -11,6 +11,7 @@ FilePath: /Code/CalculationTest/config.py
 
 from config import *
 import os
+import requests
 
 
 def get_access_token():           # 通过验证码获取新token
@@ -32,26 +33,19 @@ if os.path.exists(filename) is False:               # 判断文件是否存在�
         access_token = get_access_token()
         f.write(access_token)
 else:
-    with open(filename, 'r+') as f:                 # 若存在，直接读取token，然后判断token是否有效，无效则重新获取token
-        access_token_exit = f.read()
-        headers = {"access-token": access_token_exit}
-        print(access_token_exit)
-        print(type(access_token_exit))
-        m = requests.get(url=url_domain + url_eventList, headers=headers)
-        print(m.json())
-        if m.json()['code'] == 6000:
-            access_token = access_token_exit
-        else:
-            access_token = get_access_token()
-            f.write(access_token)
-# print(access_token)
-# print(type(access_token))
-# with open(filename, 'r') as file:
-#     print(file.read())
-#     print(type(file.read()))
-#     if file.read() == access_token:
-#         print("相同")
-#     else:
-#         print('不同')
+    file = open(filename, 'r')
+    access_token_exit = file.read()
+    file.close()
+    headers = {"access-token": access_token_exit}
+    print(access_token_exit)
+    m = requests.get(url=url_domain + url_eventList, headers=headers)
+    print(m.json())
+    if m.json()['code'] == 6000:                    # token生效，直接应用
+        access_token = access_token_exit
+    else:
+        access_token = get_access_token()           #token失效，重新获取
+        file = open(filename, 'w+')
+        file.write(access_token)
+        file.close()
 
 

@@ -5,6 +5,8 @@ LastEditors: Amberlxy
 LastEditTime: 2022-12-03 15:00:53
 FilePath: /CalculationTest/testcase/case/test_event_totaltimes.py
 '''
+import allure
+
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
@@ -13,6 +15,7 @@ FilePath: /CalculationTest/testcase/case/test_event_totaltimes.py
 from testcase.module.calculate import *
 
 
+@allure.feature('总次数')
 def test_01():
     data = {
         "productId": "1480807164923912194",
@@ -53,4 +56,4 @@ def test_01():
         "id": "f8df0158-5b1a-4b21-a548-3ae372e2a9b3"
     }
 
-    calculation(data)
+    calculation(data, access_token4=access_token)

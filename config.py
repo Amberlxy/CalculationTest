@@ -9,7 +9,6 @@ FilePath: /Code/CalculationTest/config.py
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import requests
 
 # 用户登录
 username = "18091755660"
